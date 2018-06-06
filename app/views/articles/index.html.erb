@@ -1,0 +1,23 @@
+<div class="text-center m-5" >
+  <h1>les bd chouettes </h1>
+  <%= link_to "New article", new_article_path, class: "btn btn-primary" %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <%= @articles.each do |article| %>
+    <div class="col-12">
+      <div class="shadow m-3 bg-white rounded p-4 d-flex justify-content-between">
+
+        <h2><%= link_to article.title, article_path(article.id) %> - <%= "*" * article.stars %></h2>
+        <p><b><%= article.created_at.strftime("%D") %></b></p>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<!-- LE CREATE ARTICLE NE FONCTIONNE PAS -->
